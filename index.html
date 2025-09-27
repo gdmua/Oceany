@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serenité Spa — Cuidado & Bienestar</title>
+  <meta name="description" content="Centro de estética y spa: masajes, faciales, depilación y cuidado integral. Reserva en línea." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+     :root{
+  --bg:#ffffff;
+  --card:#ffffffee;
+  --ink:#1E2A2F;
+  --muted:#4c5457;
+  --brand:#e80ca9;  
+  --brand-2:#3BAEA0; 
+  --accent:#EADBC8; 
+  --ring:#e80ca9;
+  --shadow: 0 10px 30px rgba(30,42,47,.08), 0 2px 8px rgba(30,42,47,.06);
+  --radius: 18px;
+  --radius-lg: 26px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:'Outfit',sans-serif;
+  color:var(--ink);
+  background:radial-gradient(1200px 800px at 80% -10%, #ffe7df66 0%, transparent 60%),
+             radial-gradient(1200px 800px at -10% 10%, #dff4ef80 0%, transparent 55%),
+             var(--bg);
+  line-height:1.6;
+}
+
+/* 🔥 Titulares más modernos */
+h1,h2,h3,h4{
+  font-family:'Raleway',sans-serif;
+  font-weight:600;
+  letter-spacing:-0.5px;
+}
+
+a{color:var(--brand-2);text-decoration:none}
+img{max-width:100%;display:block}
+.container{width:min(1120px, 92%);margin-inline:auto}
+
+/* Nav */
+.nav{
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.65);
+  backdrop-filter:saturate(1.3) blur(10px);
+  border-bottom:1px solid #ffffff4d;
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand-logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--brand),#ecb3a6);box-shadow:var(--shadow);display:grid;place-items:center;color:#fff;font-weight:700}
+.brand h1{font-family:'Raleway',sans-serif;font-size:1.25rem;letter-spacing:.3px;margin:0}
+.menu{display:flex;gap:1.25rem;align-items:center}
+.menu a{color:var(--muted);font-weight:500}
+.menu a:hover{color:var(--ink)}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;padding:.7rem 1rem;border-radius:999px;box-shadow:var(--shadow);border:1px solid #ffffff4d}
+.cta:hover{filter:brightness(.98)}
+.burger{display:none;cursor:pointer;border:1px solid #ffffff80;border-radius:12px;padding:.5rem}
+.mobile{display:none;flex-direction:column;gap:1rem;padding:1rem 0}
+
+/* Hero */
+.hero{position:relative;padding:clamp(72px,10vw,120px) 0 72px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center}
+.headline{
+  font-family:'Raleway',sans-serif;
+  font-weight:600;
+  font-size:clamp(2rem,5vw,3.4rem);
+  line-height:1.15;
+  letter-spacing:-0.5px;
+  margin:0 0 .8rem;
+}
+.sub{color:var(--muted);max-width:58ch}
+.hero-card{background:var(--card);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius-lg);padding:1.2rem}
+.hero-badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.badge{padding:.45rem .7rem;border:1px solid #0000000e;border-radius:999px;background:#fff7;backdrop-filter:blur(6px);font-size:.85rem}
+.hero-visual{position:relative}
+.blob{position:absolute;inset:auto;filter:blur(40px);opacity:.7;z-index:-1}
+.blob.one{width:300px;height:300px;background:#ffd9cf;top:-40px;right:-30px;border-radius:40% 60% 70% 30%/40% 35% 65% 60%;animation:float 12s ease-in-out infinite}
+.blob.two{width:280px;height:280px;background:#c2fff2;bottom:-30px;left:-20px;border-radius:60% 40% 30% 70%/50% 60% 40% 50%;animation:float 14s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+
+/* Sections */
+section{padding:72px 0}
+.section-title{font-family:'Raleway',sans-serif;font-weight:600;font-size:2rem;letter-spacing:-0.5px;margin:0 0 .6rem}
+.section-sub{color:var(--muted);margin:0 0 1.2rem}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.card{background:var(--card);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.card img{aspect-ratio:4/3;object-fit:cover}
+.card-body{padding:1rem}
+.chip{display:inline-block;padding:.35rem .7rem;border-radius:999px;background:#fff;border:1px solid #0000000f;font-size:.8rem;color:var(--muted);margin-bottom:.6rem}
+.card h3{margin:.2rem 0 .4rem;font-size:1.15rem}
+.card p{color:var(--muted)}
+
+/* Pricing */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.price-card{padding:1.2rem;border-radius:var(--radius);background:linear-gradient( to bottom right, #fff, #fffaf6 );border:1px solid #ffffff;box-shadow:var(--shadow)}
+.price-card .title{font-weight:600}
+.price{font-size:2rem;font-weight:700;margin:.4rem 0}
+.features{list-style:none;padding:0;margin:.6rem 0;display:grid;gap:.4rem;color:var(--muted)}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:.6rem}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px;cursor:pointer}
+.tall{grid-row:span 2}
+.wide{grid-column:span 2}
+
+/* Testimonials */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.quote{padding:1rem;border-radius:var(--radius);background:#fff;border:1px solid #ffffff;box-shadow:var(--shadow)}
+.quote p{margin:.4rem 0;color:var(--muted)}
+.quote .name{font-weight:600}
+
+/* Booking */
+.booking-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.25rem}
+form{display:grid;gap:.8rem}
+label{font-size:.9rem;color:var(--muted)}
+input,select,textarea{width:100%;padding:.85rem;border-radius:12px;border:1px solid #eaeaea;background:#fff;outline:none}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 6px var(--ring);border-color:#e5c2ba}
+button.btn{padding:.9rem 1.1rem;border-radius:999px;border:none;background:var(--brand);color:#fff;font-weight:600;cursor:pointer;box-shadow:var(--shadow)}
+button.btn.secondary{background:var(--brand-2)}
+.note{font-size:.9rem;color:var(--muted)}
+.aside{background:linear-gradient(180deg,#ffffff, #fff7f4);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius);padding:1rem}
+
+/* Contact */
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.mini{padding:1rem;border-radius:14px;border:1px solid #ffffff;background:#fff;box-shadow:var(--shadow)}
+
+/* Footer */
+footer{padding:40px 0;background:#111417;color:#d8dee3}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.25rem}
+.foot-grid a{color:#c7e7e2}
+.copyright{border-top:1px solid #2a2f35;margin-top:1rem;padding-top:1rem;color:#9aa7b1}
+
+/* Utilities */
+.pill{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid #ffffff;border-radius:999px;padding:.5rem .8rem;box-shadow:var(--shadow)}
+.row{display:flex;gap:.6rem;flex-wrap:wrap}
+.center{text-align:center}
+.mt{margin-top:1rem}
+.mb{margin-bottom:1rem}
+.hidden{display:none}
+
+/* Back to top */
+.to-top{position:fixed;right:18px;bottom:18px;z-index:40;opacity:0;visibility:hidden;transition:.25s}
+.to-top.show{opacity:1;visibility:visible}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero-grid{grid-template-columns:1fr}
+  .services,.pricing,.testis{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:repeat(4,1fr)}
+  .booking-grid{grid-template-columns:1fr}
+  .contact-cards{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 680px){
+  .menu{display:none}
+  .burger{display:block}
+  .mobile{display:flex}
+  .services,.pricing,.testis{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .contact-cards{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+}
+
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <div class="brand-logo" aria-hidden="true">SS</div>
+        <h1>Serenité Spa</h1>
+      </a>
+      <div class="menu" aria-label="Menu">
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#reserva" class="pill">Reservar</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+    <div class="container mobile hidden" id="mobileMenu">
+      <a href="#servicios">Servicios</a>
+      <a href="#precios">Precios</a>
+      <a href="#galeria">Galería</a>
+      <a href="#reserva">Reservar</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="row">
+          <span class="pill">✨ Cuidado premium</span>
+          <span class="pill">🌿 Bienestar integral</span>
+        </div>
+        <h2 class="headline">Relaja tu cuerpo, renueva tu piel y recarga tu energía</h2>
+        <p class="sub">Somos un centro de estética y spa dedicado a experiencias sensoriales que combinan técnicas profesionales y productos de alta calidad. Agenda tu cita y disfruta de un oasis en la ciudad.</p>
+        <div class="hero-badges">
+          <span class="badge">Masajes terapéuticos</span>
+          <span class="badge">Faciales & dermo</span>
+          <span class="badge">Depilación</span>
+          <span class="badge">Manos & pies</span>
+        </div>
+        <div class="row">
+          <a class="cta" href="#reserva">Reservar ahora</a>
+          <a class="pill" href="https://wa.me/573001234567" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Spa: toallas y aceites" style="border-radius:14px"/>
+          <div class="row mt">
+            <span class="pill">⏱️ 60–90 min</span>
+            <span class="pill">👩🏻‍⚕️ Profesionales</span>
+            <span class="pill">🧴 Productos naturales</span>
+          </div>
+        </div>
+        <div class="blob one"></div>
+        <div class="blob two"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="container">
+    <h3 class="section-title">Servicios destacados</h3>
+    <p class="section-sub">Tratamientos diseñados para resultados visibles y una sensación de bienestar duradera.</p>
+    <div class="services reveal">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop" alt="Masaje relajante"/>
+        <div class="card-body">
+          <span class="chip">Masaje</span>
+          <h3>Relajante Aromaterapia</h3>
+          <p>Libera tensión muscular con técnicas suaves y aceites esenciales.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1556228724-4bcd0e516df9?q=80&w=1200&auto=format&fit=crop" alt="Limpieza facial"/>
+        <div class="card-body">
+          <span class="chip">Facial</span>
+          <h3>Limpieza profunda</h3>
+          <p>Purifica, exfolia e hidrata para una piel luminosa y uniforme.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1556227691-7c6955aeb98c?q=80&w=1200&auto=format&fit=crop" alt="Manicure"/>
+        <div class="card-body">
+          <span class="chip">Manos & Pies</span>
+          <h3>Manicure Spa</h3>
+          <p>Cuidado completo con hidratación, masaje y acabado impecable.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="precios" class="container">
+    <h3 class="section-title">Planes & Precios</h3>
+    <p class="section-sub">Transparencia total. Elige el plan ideal para ti.</p>
+    <div class="pricing reveal">
+      <div class="price-card">
+        <div class="title">Esencial</div>
+        <div class="price">$79.000</div>
+        <ul class="features">
+          <li>Masaje 45 min</li>
+          <li>Infusión herbal</li>
+          <li>Aromaterapia ligera</li>
+        </ul>
+        <button class="btn" data-scroll="#reserva">Reservar</button>
+      </div>
+      <div class="price-card" style="border:2px solid #f3e2da">
+        <div class="title">Premium</div>
+        <div class="price">$129.000</div>
+        <ul class="features">
+          <li>Masaje 60 min</li>
+          <li>Exfoliación corporal</li>
+          <li>Mascarilla hidratante</li>
+        </ul>
+        <button class="btn" data-scroll="#reserva">Reservar</button>
+      </div>
+      <div class="price-card">
+        <div class="title">Duo Relax</div>
+        <div class="price">$219.000</div>
+        <ul class="features">
+          <li>Sesión para 2 personas</li>
+          <li>Refresco natural</li>
+          <li>Zona de descanso</li>
+        </ul>
+        <button class="btn" data-scroll="#reserva">Reservar</button>
+      </div>
+    </div>
+    <p class="note mt">*Precios de ejemplo. Cambia los valores según tu negocio.</p>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="container">
+    <h3 class="section-title">Galería</h3>
+    <p class="section-sub">Un vistazo a nuestras experiencias.</p>
+    <div class="gallery reveal" id="gal">
+      <img class="tall" src="https://images.unsplash.com/photo-1556228721-2f4b46a4b2bf?q=80&w=1200&auto=format&fit=crop" alt="Cabina spa"/>
+      <img class="wide" src="https://images.unsplash.com/photo-1556227769-95f7f0f02d28?q=80&w=1200&auto=format&fit=crop" alt="Velas aromáticas"/>
+      <img src="https://images.unsplash.com/photo-1541085388143-3688f0b701f1?q=80&w=1200&auto=format&fit=crop" alt="Toallas"/>
+      <img class="tall" src="https://images.unsplash.com/photo-1505575972945-280b9fef5a38?q=80&w=1200&auto=format&fit=crop" alt="Masaje"/>
+      <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=1200&auto=format&fit=crop" alt="Piedras calientes"/>
+      <img class="wide" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop" alt="Aromaterapia"/>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="container" id="testimonios">
+    <h3 class="section-title">Lo que dicen nuestros clientes</h3>
+    <p class="section-sub">La mejor carta de presentación es tu experiencia.</p>
+    <div class="testis reveal">
+      <div class="quote"><div class="name">María</div><p>“Salí renovada, el masaje fue increíble. ¡Volveré!”</p></div>
+      <div class="quote"><div class="name">Daniel</div><p>“Atención impecable y un ambiente que invita a relajarse.”</p></div>
+      <div class="quote"><div class="name">Laura</div><p>“El facial dejó mi piel luminosa desde el primer día.”</p></div>
+    </div>
+  </section>
+
+  <!-- RESERVA -->
+  <section id="reserva" class="container">
+    <h3 class="section-title">Reserva tu cita</h3>
+    <p class="section-sub">Completa el formulario y te confirmaremos por WhatsApp o correo.</p>
+    <div class="booking-grid reveal">
+      <form id="booking">
+        <div>
+          <label>Nombre completo</label>
+          <input required name="nombre" placeholder="Tu nombre" />
+        </div>
+        <div>
+          <label>Teléfono / WhatsApp</label>
+          <input required name="telefono" placeholder="300 123 4567" pattern="[0-9\s+()-]{7,}" />
+        </div>
+        <div>
+          <label>Correo electrónico</label>
+          <input required type="email" name="email" placeholder="tucorreo@dominio.com" />
+        </div>
+        <div>
+          <label>Servicio</label>
+          <select name="servicio" required>
+            <option value="">Selecciona una opción</option>
+            <option>Masaje relajante 60 min</option>
+            <option>Limpieza facial</option>
+            <option>Depilación</option>
+            <option>Manicure & Pedicure</option>
+          </select>
+        </div>
+        <div>
+          <label>Fecha</label>
+          <input type="date" name="fecha" required />
+        </div>
+        <div>
+          <label>Hora</label>
+          <input type="time" name="hora" required />
+        </div>
+        <div>
+          <label>Comentarios</label>
+          <textarea name="comentarios" rows="4" placeholder="Preferencias, alergias, etc."></textarea>
+        </div>
+        <button class="btn" type="submit">Enviar solicitud</button>
+        <p class="note" id="msg" role="status"></p>
+      </form>
+      <aside class="aside">
+        <h4 style="margin-top:0">Horarios</h4>
+        <p>Lunes a sábado: 9:00 – 19:00<br>Domingos y festivos: 10:00 – 16:00</p>
+        <h4>Ubicación</h4>
+        <p>Calle 123 #45–67, Centro – Ciudad</p>
+        <a class="btn secondary" href="https://maps.google.com" target="_blank" rel="noopener">Cómo llegar</a>
+        <p class="note mt">*Edita dirección y horarios según tu centro.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="container">
+  <h3 class="section-title">Contáctanos</h3>
+  <p class="section-sub">¿Dudas o solicitudes especiales? Estamos para ayudarte.</p>
+  <div class="contact-cards reveal">
+    
+    <div class="mini">
+      <strong><i class="fab fa-whatsapp"></i> WhatsApp</strong>
+      <p class="mb">+57 300 123 4567</p>
+      <a class="btn secondary" href="https://wa.me/573001234567" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Escribir
+      </a>
+    </div>
+
+    <div class="mini">
+      <strong><i class="fas fa-envelope"></i> Correo</strong>
+      <p class="mb">contacto@serenitespa.com</p>
+      <a class="btn secondary" href="mailto:contacto@serenitespa.com">
+        <i class="fas fa-envelope"></i> Enviar correo
+      </a>
+    </div>
+
+    <div class="mini">
+      <strong><i class="fab fa-instagram"></i> Instagram</strong>
+      <p class="mb">@serenite.spa</p>
+      <a class="btn secondary" href="https://instagram.com/serenite.spa" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i> Ver perfil
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot-grid">
+      <div>
+        <h4 style="margin:0 0 .5rem;font-family:Playfair Display,serif">Serenité Spa</h4>
+        <p>Bienestar, belleza y cuidado personalizado. © <span id="year"></span></p>
+      </div>
+      <div>
+        <strong>Enlaces</strong>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#reserva">Reservas</a></li>
+        </ul>
+      </div>
+      <div>
+        <strong>Políticas</strong>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Tratamiento de datos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container copyright">Hecho con ♥ para tu marca.</div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="btn to-top" id="toTop" aria-label="Volver arriba">↑</button>
+
+  <script>
+    // Año automático
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Burger menu
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', ()=>{
+      const isOpen = mobileMenu.classList.toggle('hidden') === false;
+      burger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Scroll suave
+    document.querySelectorAll('[data-scroll], .menu a, .mobile a').forEach(el=>{
+      el.addEventListener('click', (e)=>{
+        const sel = el.getAttribute('data-scroll') || el.getAttribute('href');
+        if(sel?.startsWith('#')){
+          e.preventDefault();
+          document.querySelector(sel)?.scrollIntoView({behavior:'smooth'});
+          mobileMenu.classList.add('hidden');
+          burger.setAttribute('aria-expanded','false');
+        }
+      })
+    })
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 500){ toTop.classList.add('show'); } else { toTop.classList.remove('show'); }
+    });
+    toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+    // Intersection reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.animate([
+          {opacity:0, transform:'translateY(14px)'},
+          {opacity:1, transform:'translateY(0)'}
+        ], {duration:600, easing:'ease-out', fill:'forwards'}); io.unobserve(e.target); }
+      })
+    }, {threshold:.1})
+    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+    // Galería: mini lightbox simple
+    const gal = document.getElementById('gal');
+    const overlay = document.createElement('div');
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;place-items:center;z-index:60;padding:20px;';
+    const big = document.createElement('img');
+    big.style.cssText = 'max-width:min(1100px,92%);max-height:88vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.3)';
+    overlay.appendChild(big);
+    overlay.addEventListener('click', ()=> overlay.style.display='none');
+    document.body.appendChild(overlay);
+    gal.querySelectorAll('img').forEach(img=>{
+      img.addEventListener('click',()=>{ big.src = img.src; overlay.style.display='grid'; })
+    })
+
+    // Validación y simulación de envío
+    const form = document.getElementById('booking');
+    const msg = document.getElementById('msg');
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      // Validaciones simples
+      if(!data.nombre || !data.telefono || !data.email || !data.servicio || !data.fecha || !data.hora){
+        msg.textContent = 'Por favor completa todos los campos.';
+        msg.style.color = '#b3261e';
+        return;
+      }
+      msg.textContent = 'Enviando…';
+      msg.style.color = '#5B6B73';
+      // Simulación de envío. Reemplaza con tu API/Google Apps Script
+      await new Promise(r=>setTimeout(r, 900));
+      msg.textContent = '¡Solicitud recibida! Te contactaremos para confirmar la cita.';
+      msg.style.color = '#2e7d32';
+      form.reset();
+    });
+  </script>
+</body>
+</html>
