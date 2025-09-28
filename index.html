@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-     :root{
+:root{
   --bg:#ffffff;
   --card:#ffffffee;
   --ink:#1E2A2F;
@@ -165,7 +165,7 @@ footer{padding:50px 0;background:#111417;color:#d8dee3}
 .center{text-align:center}
 .mt{margin-top:1.5rem}
 .mb{margin-bottom:1.5rem}
-.hidden{display:none}
+.hidden{display:none !important;} /* 🔥 reforzado */
 
 /* Back to top */
 .to-top{position:fixed;right:24px;bottom:24px;z-index:40;opacity:0;visibility:hidden;transition:.25s; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;}
@@ -183,7 +183,8 @@ footer{padding:50px 0;background:#111417;color:#d8dee3}
 @media (max-width: 680px){
   .menu{display:none}
   .burger{display:block}
-  .mobile{display:flex}
+  .mobile{display:none;flex-direction:column;gap:1rem;padding:1rem 0} /* oculto por defecto */
+  .mobile.show{display:flex !important;} /* visible solo si tiene .show */
   .services,.pricing,.testis{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
   .contact-cards{grid-template-columns:1fr}
@@ -198,6 +199,7 @@ footer{padding:50px 0;background:#111417;color:#d8dee3}
   object-fit: cover;    /* ajusta la imagen */
   box-shadow: var(--shadow);
 }
+
 
   </style>
 </head>
@@ -500,7 +502,7 @@ footer{padding:50px 0;background:#111417;color:#d8dee3}
   <script>
     // Año automático
     document.getElementById('year').textContent = new Date().getFullYear();
-    
+
     // Burger menu
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
