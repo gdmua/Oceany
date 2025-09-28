@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Serenité Spa — Cuidado & Bienestar</title>
-  <meta name="description" content="Centro de estética y spa: masajes, faciales, depilación y cuidado integral. Reserva en línea." />
+  <title>Oceany Centro de Estética — Belleza & Bienestar</title>
+  <meta name="description" content="Centro de estética especializado en tratamientos faciales, corporales, depilación láser y cuidado integral de la piel. Reserva en línea." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
      :root{
@@ -50,20 +50,26 @@ img{max-width:100%;display:block}
 
 /* Nav */
 .nav{
-  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.65);
+  position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);
   backdrop-filter:saturate(1.3) blur(10px);
   border-bottom:1px solid #ffffff4d;
+  transition: all 0.3s ease;
+}
+.nav.scrolled {
+  background:rgba(255,255,255,.98);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
 .brand{display:flex;align-items:center;gap:.7rem}
 .brand-logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--brand),#ecb3a6);box-shadow:var(--shadow);display:grid;place-items:center;color:#fff;font-weight:700}
 .brand h1{font-family:'Raleway',sans-serif;font-size:1.25rem;letter-spacing:.3px;margin:0}
 .menu{display:flex;gap:1.25rem;align-items:center}
-.menu a{color:var(--muted);font-weight:500}
+.menu a{color:var(--muted);font-weight:500; transition: color 0.2s ease;}
 .menu a:hover{color:var(--ink)}
-.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;padding:.7rem 1rem;border-radius:999px;box-shadow:var(--shadow);border:1px solid #ffffff4d}
-.cta:hover{filter:brightness(.98)}
-.burger{display:none;cursor:pointer;border:1px solid #ffffff80;border-radius:12px;padding:.5rem}
+.cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--brand);color:#fff;padding:.7rem 1.5rem;border-radius:999px;box-shadow:var(--shadow);border:1px solid #ffffff4d; font-weight: 600; transition: all 0.2s ease;}
+.cta:hover{filter:brightness(.95); transform: translateY(-1px);}
+.burger{display:none;cursor:pointer;border:1px solid #ffffff80;border-radius:12px;padding:.5rem; background: transparent; transition: all 0.2s ease;}
+.burger:hover {background: rgba(0,0,0,0.03);}
 .mobile{display:none;flex-direction:column;gap:1rem;padding:1rem 0}
 
 /* Hero */
@@ -77,10 +83,11 @@ img{max-width:100%;display:block}
   letter-spacing:-0.5px;
   margin:0 0 .8rem;
 }
-.sub{color:var(--muted);max-width:58ch}
-.hero-card{background:var(--card);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius-lg);padding:1.2rem}
+.sub{color:var(--muted);max-width:58ch; font-size: 1.1rem; line-height: 1.7;}
+.hero-card{background:var(--card);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius-lg);padding:1.5rem; transition: transform 0.3s ease;}
+.hero-card:hover {transform: translateY(-5px);}
 .hero-badges{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
-.badge{padding:.45rem .7rem;border:1px solid #0000000e;border-radius:999px;background:#fff7;backdrop-filter:blur(6px);font-size:.85rem}
+.badge{padding:.45rem .9rem;border:1px solid #0000000e;border-radius:999px;background:#fff7;backdrop-filter:blur(6px);font-size:.85rem; font-weight: 500;}
 .hero-visual{position:relative}
 .blob{position:absolute;inset:auto;filter:blur(40px);opacity:.7;z-index:-1}
 .blob.one{width:300px;height:300px;background:#ffd9cf;top:-40px;right:-30px;border-radius:40% 60% 70% 30%/40% 35% 65% 60%;animation:float 12s ease-in-out infinite}
@@ -88,69 +95,80 @@ img{max-width:100%;display:block}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
 
 /* Sections */
-section{padding:72px 0}
-.section-title{font-family:'Raleway',sans-serif;font-weight:600;font-size:2rem;letter-spacing:-0.5px;margin:0 0 .6rem}
-.section-sub{color:var(--muted);margin:0 0 1.2rem}
+section{padding:80px 0}
+.section-title{font-family:'Raleway',sans-serif;font-weight:600;font-size:2.5rem;letter-spacing:-0.5px;margin:0 0 .6rem}
+.section-sub{color:var(--muted);margin:0 0 1.5rem; font-size: 1.1rem;}
 
 /* Services */
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.card{background:var(--card);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-.card img{aspect-ratio:4/3;object-fit:cover}
-.card-body{padding:1rem}
-.chip{display:inline-block;padding:.35rem .7rem;border-radius:999px;background:#fff;border:1px solid #0000000f;font-size:.8rem;color:var(--muted);margin-bottom:.6rem}
-.card h3{margin:.2rem 0 .4rem;font-size:1.15rem}
-.card p{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.card{background:var(--card);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column; transition: all 0.3s ease;}
+.card:hover {transform: translateY(-5px); box-shadow: 0 15px 40px rgba(30,42,47,.12);}
+.card img{aspect-ratio:4/3;object-fit:cover; transition: transform 0.5s ease;}
+.card:hover img {transform: scale(1.05);}
+.card-body{padding:1.5rem}
+.chip{display:inline-block;padding:.35rem .8rem;border-radius:999px;background:#fff;border:1px solid #0000000f;font-size:.8rem;color:var(--muted);margin-bottom:.8rem; font-weight: 500;}
+.card h3{margin:.2rem 0 .4rem;font-size:1.25rem; font-family: "Raleway", sans-serif;}
+.card p{color:var(--muted); line-height: 1.6;}
 
 /* Pricing */
-.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.price-card{padding:1.2rem;border-radius:var(--radius);background:linear-gradient( to bottom right, #fff, #fffaf6 );border:1px solid #ffffff;box-shadow:var(--shadow)}
-.price-card .title{font-weight:600}
-.price{font-size:2rem;font-weight:700;margin:.4rem 0}
-.features{list-style:none;padding:0;margin:.6rem 0;display:grid;gap:.4rem;color:var(--muted)}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.price-card{padding:1.8rem;border-radius:var(--radius);background:linear-gradient( to bottom right, #fff, #fffaf6 );border:1px solid #ffffff;box-shadow:var(--shadow); transition: all 0.3s ease;}
+.price-card:hover {transform: translateY(-5px);}
+.price-card .title{font-weight:600; font-size: 1.2rem;}
+.price{font-size:2.2rem;font-weight:700;margin:.6rem 0; font-family: "Raleway", sans-serif;}
+.features{list-style:none;padding:0;margin:.8rem 0;display:grid;gap:.5rem;color:var(--muted)}
+.features li {position: relative; padding-left: 1.2rem;}
+.features li:before {content: "✓"; position: absolute; left: 0; color: var(--brand-2);}
 
 /* Gallery */
-.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:.6rem}
-.gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px;cursor:pointer}
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:150px;gap:.8rem}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:12px;cursor:pointer; transition: all 0.3s ease;}
+.gallery img:hover {transform: scale(1.02);}
 .tall{grid-row:span 2}
 .wide{grid-column:span 2}
 
 /* Testimonials */
-.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.quote{padding:1rem;border-radius:var(--radius);background:#fff;border:1px solid #ffffff;box-shadow:var(--shadow)}
-.quote p{margin:.4rem 0;color:var(--muted)}
-.quote .name{font-weight:600}
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.quote{padding:1.5rem;border-radius:var(--radius);background:#fff;border:1px solid #ffffff;box-shadow:var(--shadow); transition: all 0.3s ease;}
+.quote:hover {transform: translateY(-3px);}
+.quote p{margin:.4rem 0;color:var(--muted); font-style: italic;}
+.quote .name{font-weight:600; margin-bottom: 0.5rem;}
 
 /* Booking */
-.booking-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.25rem}
-form{display:grid;gap:.8rem}
-label{font-size:.9rem;color:var(--muted)}
-input,select,textarea{width:100%;padding:.85rem;border-radius:12px;border:1px solid #eaeaea;background:#fff;outline:none}
-input:focus,select:focus,textarea:focus{box-shadow:0 0 0 6px var(--ring);border-color:#e5c2ba}
-button.btn{padding:.9rem 1.1rem;border-radius:999px;border:none;background:var(--brand);color:#fff;font-weight:600;cursor:pointer;box-shadow:var(--shadow)}
+.booking-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:1.5rem}
+form{display:grid;gap:1rem}
+label{font-size:.9rem;color:var(--muted); font-weight: 500;}
+input,select,textarea{width:100%;padding:1rem;border-radius:12px;border:1px solid #eaeaea;background:#fff;outline:none; font-family: inherit; transition: all 0.2s ease;}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 4px var(--ring);border-color:var(--brand)}
+button.btn{padding:1rem 1.5rem;border-radius:999px;border:none;background:var(--brand);color:#fff;font-weight:600;cursor:pointer;box-shadow:var(--shadow); transition: all 0.2s ease; font-size: 1rem;}
+button.btn:hover {filter:brightness(.95); transform: translateY(-1px);}
 button.btn.secondary{background:var(--brand-2)}
 .note{font-size:.9rem;color:var(--muted)}
-.aside{background:linear-gradient(180deg,#ffffff, #fff7f4);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius);padding:1rem}
+.aside{background:linear-gradient(180deg,#ffffff, #fff7f4);border:1px solid #ffffff;box-shadow:var(--shadow);border-radius:var(--radius);padding:1.5rem}
 
 /* Contact */
-.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.mini{padding:1rem;border-radius:14px;border:1px solid #ffffff;background:#fff;box-shadow:var(--shadow)}
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.mini{padding:1.5rem;border-radius:14px;border:1px solid #ffffff;background:#fff;box-shadow:var(--shadow); transition: all 0.3s ease;}
+.mini:hover {transform: translateY(-3px);}
 
 /* Footer */
-footer{padding:40px 0;background:#111417;color:#d8dee3}
-.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.25rem}
-.foot-grid a{color:#c7e7e2}
-.copyright{border-top:1px solid #2a2f35;margin-top:1rem;padding-top:1rem;color:#9aa7b1}
+footer{padding:50px 0;background:#111417;color:#d8dee3}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:1.5rem}
+.foot-grid a{color:#c7e7e2; transition: color 0.2s ease;}
+.foot-grid a:hover {color: #fff;}
+.copyright{border-top:1px solid #2a2f35;margin-top:1.5rem;padding-top:1.5rem;color:#9aa7b1}
 
 /* Utilities */
-.pill{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid #ffffff;border-radius:999px;padding:.5rem .8rem;box-shadow:var(--shadow)}
-.row{display:flex;gap:.6rem;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:.6rem;background:#fff;border:1px solid #ffffff;border-radius:999px;padding:.6rem 1rem;box-shadow:var(--shadow); transition: all 0.2s ease;}
+.pill:hover {transform: translateY(-1px);}
+.row{display:flex;gap:.8rem;flex-wrap:wrap}
 .center{text-align:center}
-.mt{margin-top:1rem}
-.mb{margin-bottom:1rem}
+.mt{margin-top:1.5rem}
+.mb{margin-bottom:1.5rem}
 .hidden{display:none}
 
 /* Back to top */
-.to-top{position:fixed;right:18px;bottom:18px;z-index:40;opacity:0;visibility:hidden;transition:.25s}
+.to-top{position:fixed;right:24px;bottom:24px;z-index:40;opacity:0;visibility:hidden;transition:.25s; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;}
 .to-top.show{opacity:1;visibility:visible}
 
 /* Responsive */
@@ -170,6 +188,15 @@ footer{padding:40px 0;background:#111417;color:#d8dee3}
   .gallery{grid-template-columns:repeat(2,1fr)}
   .contact-cards{grid-template-columns:1fr}
   .foot-grid{grid-template-columns:1fr}
+  .section-title {font-size: 2rem;}
+  section {padding: 60px 0;}
+}
+.brand-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;   /* mantiene estilo redondeado */
+  object-fit: cover;    /* ajusta la imagen */
+  box-shadow: var(--shadow);
 }
 
   </style>
@@ -177,11 +204,12 @@ footer{padding:40px 0;background:#111417;color:#d8dee3}
 <body>
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#">
-        <div class="brand-logo" aria-hidden="true">SS</div>
-        <h1>Serenité Spa</h1>
-      </a>
+   <div class="container nav-inner">
+  <a class="brand" href="#">
+    <!-- Logo como imagen -->
+    <img src="https://i.imgur.com/khiQU09.png" alt="Oceany Centro de Estética" class="brand-logo" />
+    <h1>Oceany Centro de Estética</h1>
+  </a>
       <div class="menu" aria-label="Menu">
         <a href="#servicios">Servicios</a>
         <a href="#precios">Precios</a>
@@ -205,29 +233,27 @@ footer{padding:40px 0;background:#111417;color:#d8dee3}
     <div class="container hero-grid">
       <div>
         <div class="row">
-          <span class="pill">✨ Cuidado premium</span>
-          <span class="pill">🌿 Bienestar integral</span>
+          <span class="pill">✨ Belleza premium</span>
+          <span class="pill">🌿 Cuidado especializado</span>
         </div>
-        <h2 class="headline">Relaja tu cuerpo, renueva tu piel y recarga tu energía</h2>
-        <p class="sub">Somos un centro de estética y spa dedicado a experiencias sensoriales que combinan técnicas profesionales y productos de alta calidad. Agenda tu cita y disfruta de un oasis en la ciudad.</p>
+        <h2 class="headline">Realza tu belleza natural con tratamientos de última generación</h2>
+        <p class="sub">En Oceany Centro de Estética combinamos tecnología avanzada con técnicas profesionales para ofrecerte resultados visibles y duraderos. Agenda tu cita y descubre tu mejor versión.</p>
         <div class="hero-badges">
-          <span class="badge">Masajes terapéuticos</span>
-          <span class="badge">Faciales & dermo</span>
-          <span class="badge">Depilación</span>
-          <span class="badge">Manos & pies</span>
+          <span class="badge">Faciales avanzados</span>
+          <span class="badge">Depilación láser</span>
+          <span class="badge">Tratamientos corporales</span>
         </div>
         <div class="row">
           <a class="cta" href="#reserva">Reservar ahora</a>
-          <a class="pill" href="https://wa.me/573001234567" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="pill" href="https://wa.me/573216057446" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-card">
-          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1200&auto=format&fit=crop" alt="Spa: toallas y aceites" style="border-radius:14px"/>
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop" alt="Centro de estética moderno" style="border-radius:14px"/>
           <div class="row mt">
-            <span class="pill">⏱️ 60–90 min</span>
-            <span class="pill">👩🏻‍⚕️ Profesionales</span>
-            <span class="pill">🧴 Productos naturales</span>
+            <span class="pill">👩🏻‍⚕️ Especialistas</span>
+            <span class="pill">🧴 Productos premium</span>
           </div>
         </div>
         <div class="blob one"></div>
@@ -238,31 +264,31 @@ footer{padding:40px 0;background:#111417;color:#d8dee3}
 
   <!-- SERVICIOS -->
   <section id="servicios" class="container">
-    <h3 class="section-title">Servicios destacados</h3>
-    <p class="section-sub">Tratamientos diseñados para resultados visibles y una sensación de bienestar duradera.</p>
+    <h3 class="section-title">Servicios de Estética</h3>
+    <p class="section-sub">Tratamientos profesionales diseñados para realzar tu belleza natural.</p>
     <div class="services reveal">
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop" alt="Masaje relajante"/>
-        <div class="card-body">
-          <span class="chip">Masaje</span>
-          <h3>Relajante Aromaterapia</h3>
-          <p>Libera tensión muscular con técnicas suaves y aceites esenciales.</p>
-        </div>
-      </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1556228724-4bcd0e516df9?q=80&w=1200&auto=format&fit=crop" alt="Limpieza facial"/>
+        <img src="https://images.unsplash.com/photo-1556228724-4bcd0e516df9?q=80&w=1200&auto=format&fit=crop" alt="Tratamiento facial"/>
         <div class="card-body">
           <span class="chip">Facial</span>
-          <h3>Limpieza profunda</h3>
-          <p>Purifica, exfolia e hidrata para una piel luminosa y uniforme.</p>
+          <h3>Limpieza Facial Profunda</h3>
+          <p>Purifica, exfolia e hidrata para una piel luminosa y uniforme. Incluye extracción de impurezas y mascarilla revitalizante.</p>
         </div>
       </article>
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1556227691-7c6955aeb98c?q=80&w=1200&auto=format&fit=crop" alt="Manicure"/>
+        <img src="https://images.unsplash.com/photo-1594736797933-d0d69c1d75e3?q=80&w=1200&auto=format&fit=crop" alt="Depilación láser"/>
+        <div class="card-body">
+          <span class="chip">Corporal</span>
+          <h3>Depilación Láser</h3>
+          <p>Tecnología avanzada para una depilación definitiva. Sesiones personalizadas según tu tipo de piel y vello.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop" alt="Manicure y pedicure"/>
         <div class="card-body">
           <span class="chip">Manos & Pies</span>
-          <h3>Manicure Spa</h3>
-          <p>Cuidado completo con hidratación, masaje y acabado impecable.</p>
+          <h3>Spa de Manos y Pies</h3>
+          <p>Tratamiento completo que incluye hidratación, masaje relajante y esmaltado de larga duración.</p>
         </div>
       </article>
     </div>
@@ -270,72 +296,75 @@ footer{padding:40px 0;background:#111417;color:#d8dee3}
 
   <!-- PRECIOS -->
   <section id="precios" class="container">
-    <h3 class="section-title">Planes & Precios</h3>
-    <p class="section-sub">Transparencia total. Elige el plan ideal para ti.</p>
+    <h3 class="section-title">Nuestros Paquetes</h3>
+    <p class="section-sub">Inversiones accesibles para tu bienestar y belleza.</p>
     <div class="pricing reveal">
       <div class="price-card">
-        <div class="title">Esencial</div>
-        <div class="price">$79.000</div>
+        <div class="title">Facial Básico</div>
+        <div class="price">$85.000</div>
         <ul class="features">
-          <li>Masaje 45 min</li>
-          <li>Infusión herbal</li>
-          <li>Aromaterapia ligera</li>
+          <li>Limpieza facial profunda</li>
+          <li>Exfoliación suave</li>
+          <li>Hidratación con serum</li>
+          <li>Duración: 45 min</li>
         </ul>
         <button class="btn" data-scroll="#reserva">Reservar</button>
       </div>
       <div class="price-card" style="border:2px solid #f3e2da">
-        <div class="title">Premium</div>
-        <div class="price">$129.000</div>
+        <div class="title">Spa Completo</div>
+        <div class="price">$150.000</div>
         <ul class="features">
-          <li>Masaje 60 min</li>
-          <li>Exfoliación corporal</li>
-          <li>Mascarilla hidratante</li>
+          <li>Facial premium</li>
+          <li>Masaje relajante 30 min</li>
+          <li>Manicure y pedicure spa</li>
+          <li>Duración: 2 horas</li>
         </ul>
         <button class="btn" data-scroll="#reserva">Reservar</button>
       </div>
       <div class="price-card">
-        <div class="title">Duo Relax</div>
-        <div class="price">$219.000</div>
+        <div class="title">Sesión Láser</div>
+        <div class="price">$120.000</div>
         <ul class="features">
-          <li>Sesión para 2 personas</li>
-          <li>Refresco natural</li>
-          <li>Zona de descanso</li>
+          <li>Depilación láser zona pequeña</li>
+          <li>Evaluación de piel</li>
+          <li>Crema post-tratamiento</li>
+          <li>Duración: 30 min</li>
         </ul>
         <button class="btn" data-scroll="#reserva">Reservar</button>
       </div>
     </div>
-    <p class="note mt">*Precios de ejemplo. Cambia los valores según tu negocio.</p>
+    <p class="note mt">*Consulta por nuestros paquetes promocionales de múltiples sesiones.</p>
   </section>
 
   <!-- GALERÍA -->
   <section id="galeria" class="container">
-    <h3 class="section-title">Galería</h3>
-    <p class="section-sub">Un vistazo a nuestras experiencias.</p>
+    <h3 class="section-title">Nuestro Espacio</h3>
+    <p class="section-sub">Un ambiente diseñado para tu comodidad y relajación.</p>
     <div class="gallery reveal" id="gal">
-      <img class="tall" src="https://images.unsplash.com/photo-1556228721-2f4b46a4b2bf?q=80&w=1200&auto=format&fit=crop" alt="Cabina spa"/>
-      <img class="wide" src="https://images.unsplash.com/photo-1556227769-95f7f0f02d28?q=80&w=1200&auto=format&fit=crop" alt="Velas aromáticas"/>
-      <img src="https://images.unsplash.com/photo-1541085388143-3688f0b701f1?q=80&w=1200&auto=format&fit=crop" alt="Toallas"/>
-      <img class="tall" src="https://images.unsplash.com/photo-1505575972945-280b9fef5a38?q=80&w=1200&auto=format&fit=crop" alt="Masaje"/>
-      <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?q=80&w=1200&auto=format&fit=crop" alt="Piedras calientes"/>
-      <img class="wide" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop" alt="Aromaterapia"/>
+      <img class="tall" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1200&auto=format&fit=crop" alt="Sala de tratamientos"/>
+      <img class="wide" src="https://images.unsplash.com/photo-1556227769-95f7f0f02d28?q=80&w=1200&auto=format&fit=crop" alt="Ambiente relajante"/>
+      <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=1200&auto=format&fit=crop" alt="Zona de manicure"/>
+      <img class="tall" src="https://images.unsplash.com/photo-1556228724-4bcd0e516df9?q=80&w=1200&auto=format&fit=crop" alt="Equipos de estética"/>
+      <img src="https://images.unsplash.com/photo-1594736797933-d0d69c1d75e3?q=80&w=1200&auto=format&fit=crop" alt="Sala de láser"/>
+      <img class="wide" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop" alt="Productos de belleza"/>
     </div>
   </section>
 
   <!-- TESTIMONIOS -->
   <section class="container" id="testimonios">
-    <h3 class="section-title">Lo que dicen nuestros clientes</h3>
-    <p class="section-sub">La mejor carta de presentación es tu experiencia.</p>
+    <h3 class="section-title">Lo que dicen nuestras clientas</h3>
+    <p class="section-sub">La satisfacción de nuestras clientas es nuestra mejor recomendación.</p>
     <div class="testis reveal">
-      <div class="quote"><div class="name">María</div><p>“Salí renovada, el masaje fue increíble. ¡Volveré!”</p></div>
-      <div class="quote"><div class="name">Daniel</div><p>“Atención impecable y un ambiente que invita a relajarse.”</p></div>
-      <div class="quote"><div class="name">Laura</div><p>“El facial dejó mi piel luminosa desde el primer día.”</p></div>
+      <div class="quote"><div class="name">María González</div><p>“El tratamiento facial dejó mi piel increíble. Me siento renovada y con mucha más confianza.”</p></div>
+      <div class="quote"><div class="name">Ana Rodríguez</div><p>“La depilación láser ha cambiado mi vida. Resultados visibles desde la primera sesión.”</p></div>
+      <div class="quote"><div class="name">Laura Martínez</div><p>“Ambiente muy profesional y relajante. Las especialistas son muy cuidadosas y expertas.”</p></div>
     </div>
   </section>
 
   <!-- RESERVA -->
   <section id="reserva" class="container">
     <h3 class="section-title">Reserva tu cita</h3>
-    <p class="section-sub">Completa el formulario y te confirmaremos por WhatsApp o correo.</p>
+    <p class="section-sub">Completa el formulario y te contactaremos para confirmar tu horario.</p>
     <div class="booking-grid reveal">
       <form id="booking">
         <div>
@@ -351,99 +380,105 @@ footer{padding:40px 0;background:#111417;color:#d8dee3}
           <input required type="email" name="email" placeholder="tucorreo@dominio.com" />
         </div>
         <div>
-          <label>Servicio</label>
+          <label>Servicio de interés</label>
           <select name="servicio" required>
             <option value="">Selecciona una opción</option>
-            <option>Masaje relajante 60 min</option>
-            <option>Limpieza facial</option>
-            <option>Depilación</option>
-            <option>Manicure & Pedicure</option>
+            <option>Limpieza facial profunda</option>
+            <option>Depilación láser</option>
+            <option>Manicure y pedicure spa</option>
+            <option>Masaje relajante</option>
+            <option>Consulta de valoración</option>
+            <option>Otro tratamiento</option>
           </select>
         </div>
         <div>
-          <label>Fecha</label>
+          <label>Fecha preferida</label>
           <input type="date" name="fecha" required />
         </div>
         <div>
-          <label>Hora</label>
+          <label>Hora preferida</label>
           <input type="time" name="hora" required />
         </div>
         <div>
-          <label>Comentarios</label>
-          <textarea name="comentarios" rows="4" placeholder="Preferencias, alergias, etc."></textarea>
+          <label>Comentarios o preferencias</label>
+          <textarea name="comentarios" rows="4" placeholder="Alergias, condiciones de piel, etc."></textarea>
         </div>
-        <button class="btn" type="submit">Enviar solicitud</button>
+        <button class="btn" type="submit">Solicitar cita</button>
         <p class="note" id="msg" role="status"></p>
       </form>
       <aside class="aside">
-        <h4 style="margin-top:0">Horarios</h4>
-        <p>Lunes a sábado: 9:00 – 19:00<br>Domingos y festivos: 10:00 – 16:00</p>
+        <h4 style="margin-top:0">Horarios de atención</h4>
+        <p>Lunes a viernes: 9:00 – 19:00<br>Sábados: 9:00 – 17:00<br>Domingos: Cerrado</p>
         <h4>Ubicación</h4>
-        <p>Calle 123 #45–67, Centro – Ciudad</p>
+        <p>Carrera 15 #88-64, Local 203<br>Bogotá, Colombia</p>
         <a class="btn secondary" href="https://maps.google.com" target="_blank" rel="noopener">Cómo llegar</a>
-        <p class="note mt">*Edita dirección y horarios según tu centro.</p>
+        <h4 class="mt">Promociones vigentes</h4>
+        <p>• 10% descuento en tu primera cita<br>• Pack de 5 sesiones de láser con 15% off<br>• Martes de facial: 20% descuento</p>
       </aside>
     </div>
   </section>
 
   <!-- CONTACTO -->
   <section id="contacto" class="container">
-  <h3 class="section-title">Contáctanos</h3>
-  <p class="section-sub">¿Dudas o solicitudes especiales? Estamos para ayudarte.</p>
-  <div class="contact-cards reveal">
-    
-    <div class="mini">
-      <strong><i class="fab fa-whatsapp"></i> WhatsApp</strong>
-      <p class="mb">+57 300 123 4567</p>
-      <a class="btn secondary" href="https://wa.me/573001234567" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> Escribir
-      </a>
+    <h3 class="section-title">Contáctanos</h3>
+    <p class="section-sub">Estamos aquí para responder todas tus preguntas.</p>
+    <div class="contact-cards reveal">
+      <div class="mini">
+        <strong><i class="fab fa-whatsapp"></i> WhatsApp</strong>
+        <p class="mb">+57 321 605 7446</p>
+        <a class="btn secondary" href="https://wa.me/573216057446" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Escribir ahora
+        </a>
+      </div>
+      <div class="mini">
+        <strong><i class="fas fa-envelope"></i> Correo</strong>
+        <p class="mb">info@oceanyestetica.com</p>
+        <a class="btn secondary" href="mailto:info@oceanyestetica.com">
+          <i class="fas fa-envelope"></i> Enviar correo
+        </a>
+      </div>
+      <div class="mini">
+        <strong><i class="fab fa-instagram"></i> Instagram</strong>
+        <p class="mb">@Oceany Centro de Estetica</p>
+        <a class="btn secondary" href="https://www.instagram.com/oceanycentrodestetica?igsh=bDVwcDh4eTZjcHI5" target="_blank" rel="noopener">
+          <i class="fab fa-instagram"></i> Seguirnos
+        </a>
+      </div>
     </div>
-
-    <div class="mini">
-      <strong><i class="fas fa-envelope"></i> Correo</strong>
-      <p class="mb">contacto@serenitespa.com</p>
-      <a class="btn secondary" href="mailto:contacto@serenitespa.com">
-        <i class="fas fa-envelope"></i> Enviar correo
-      </a>
-    </div>
-
-    <div class="mini">
-      <strong><i class="fab fa-instagram"></i> Instagram</strong>
-      <p class="mb">@serenite.spa</p>
-      <a class="btn secondary" href="https://instagram.com/serenite.spa" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i> Ver perfil
-      </a>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="container foot-grid">
       <div>
-        <h4 style="margin:0 0 .5rem;font-family:Playfair Display,serif">Serenité Spa</h4>
-        <p>Bienestar, belleza y cuidado personalizado. © <span id="year"></span></p>
+        <h4 style="margin:0 0 .5rem;font-family:Raleway,serif">Oceany Centro de Estética</h4>
+        <p>Belleza, bienestar y cuidado personalizado. © <span id="year"></span></p>
+        <div class="row mt">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
       </div>
       <div>
-        <strong>Enlaces</strong>
+        <strong>Servicios</strong>
         <ul>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#precios">Precios</a></li>
-          <li><a href="#reserva">Reservas</a></li>
+          <li><a href="#servicios">Faciales</a></li>
+          <li><a href="#servicios">Depilación láser</a></li>
+          <li><a href="#servicios">Corporales</a></li>
+          <li><a href="#servicios">Manos y pies</a></li>
         </ul>
       </div>
       <div>
-        <strong>Políticas</strong>
+        <strong>Información</strong>
         <ul>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#reserva">Reservas</a></li>
           <li><a href="#">Términos y condiciones</a></li>
-          <li><a href="#">Tratamiento de datos</a></li>
+          <li><a href="#">Política de privacidad</a></li>
         </ul>
       </div>
     </div>
-    <div class="container copyright">Hecho con ♥ para tu marca.</div>
+    <div class="container copyright">Hecho con ❤️ por Oceany Centro de Estética</div>
   </footer>
 
   <!-- Back to top -->
@@ -481,6 +516,16 @@ footer{padding:40px 0;background:#111417;color:#d8dee3}
     });
     toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
     // Intersection reveal
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
@@ -517,11 +562,11 @@ footer{padding:40px 0;background:#111417;color:#d8dee3}
         msg.style.color = '#b3261e';
         return;
       }
-      msg.textContent = 'Enviando…';
+      msg.textContent = 'Enviando solicitud…';
       msg.style.color = '#5B6B73';
       // Simulación de envío. Reemplaza con tu API/Google Apps Script
       await new Promise(r=>setTimeout(r, 900));
-      msg.textContent = '¡Solicitud recibida! Te contactaremos para confirmar la cita.';
+      msg.textContent = '¡Solicitud recibida! Te contactaremos dentro de 24 horas para confirmar tu cita.';
       msg.style.color = '#2e7d32';
       form.reset();
     });
