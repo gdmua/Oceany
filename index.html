@@ -18,7 +18,7 @@
   --ink:#1E2A2F;
   --muted:#4c5457;
   --brand:#e80ca9;  
-  --brand-2:#3BAEA0; 
+  --brand-2:#ae3b95; 
   --accent:#EADBC8; 
   --ring:#e80ca9;
   --shadow: 0 10px 30px rgba(30,42,47,.08), 0 2px 8px rgba(30,42,47,.06);
@@ -350,17 +350,6 @@ footer{padding:50px 0;background:#111417;color:#d8dee3}
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section class="container" id="testimonios">
-    <h3 class="section-title">Lo que dicen nuestras clientas</h3>
-    <p class="section-sub">La satisfacción de nuestras clientas es nuestra mejor recomendación.</p>
-    <div class="testis reveal">
-      <div class="quote"><div class="name">María González</div><p>“El tratamiento facial dejó mi piel increíble. Me siento renovada y con mucha más confianza.”</p></div>
-      <div class="quote"><div class="name">Ana Rodríguez</div><p>“La depilación láser ha cambiado mi vida. Resultados visibles desde la primera sesión.”</p></div>
-      <div class="quote"><div class="name">Laura Martínez</div><p>“Ambiente muy profesional y relajante. Las especialistas son muy cuidadosas y expertas.”</p></div>
-    </div>
-  </section>
-
   <!-- RESERVA -->
   <section id="reserva" class="container">
     <h3 class="section-title">Reserva tu cita</h3>
@@ -406,15 +395,39 @@ footer{padding:50px 0;background:#111417;color:#d8dee3}
         <button class="btn" type="submit">Solicitar cita</button>
         <p class="note" id="msg" role="status"></p>
       </form>
-      <aside class="aside">
-        <h4 style="margin-top:0">Horarios de atención</h4>
-        <p>Lunes a viernes: 9:00 – 19:00<br>Sábados: 9:00 – 17:00<br>Domingos: Cerrado</p>
-        <h4>Ubicación</h4>
-        <p>Carrera 15 #88-64, Local 203<br>Bogotá, Colombia</p>
-        <a class="btn secondary" href="https://maps.google.com" target="_blank" rel="noopener">Cómo llegar</a>
-        <h4 class="mt">Promociones vigentes</h4>
-        <p>• 10% descuento en tu primera cita<br>• Pack de 5 sesiones de láser con 15% off<br>• Martes de facial: 20% descuento</p>
-      </aside>
+     <aside class="aside">
+  <h4 style="margin-top:0">Horarios de atención</h4>
+  <p>
+    Lunes a viernes: 9:00 – 19:00<br>
+    Sábados: 9:00 – 17:00<br>
+    Domingos: Cerrado
+  </p>
+
+  <h4>Ubicación</h4>
+  <p>Calle 11 # 2-19<br>La Dorada, Caldas</p>
+
+  <!-- Botón con enlace directo a Maps -->
+  <a class="btn secondary" 
+     href="https://www.google.com/maps?q=Calle+11+%23+2-19,+La+Dorada,+Caldas" 
+     target="_blank" 
+     rel="noopener">
+    Ver en Google Maps
+  </a>
+
+  <!-- Mapa embebido -->
+  <div style="margin-top:1rem; border-radius:12px; overflow:hidden">
+    <iframe 
+      src="https://www.google.com/maps?q=Calle+11+%23+2-19,+La+Dorada,+Caldas&output=embed" 
+      width="100%" 
+      height="220" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</aside>
+
     </div>
   </section>
 
@@ -487,14 +500,25 @@ footer{padding:50px 0;background:#111417;color:#d8dee3}
   <script>
     // Año automático
     document.getElementById('year').textContent = new Date().getFullYear();
-
+    
     // Burger menu
-    const burger = document.getElementById('burger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    burger.addEventListener('click', ()=>{
-      const isOpen = mobileMenu.classList.toggle('hidden') === false;
-      burger.setAttribute('aria-expanded', isOpen);
-    });
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+burger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  const isOpen = !mobileMenu.classList.contains('hidden');
+  burger.setAttribute('aria-expanded', isOpen);
+});
+
+// Cerrar menú al hacer clic en un enlace
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    burger.setAttribute('aria-expanded', 'false');
+  });
+});
+
 
     // Scroll suave
     document.querySelectorAll('[data-scroll], .menu a, .mobile a').forEach(el=>{
